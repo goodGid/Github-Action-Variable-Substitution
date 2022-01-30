@@ -1,2 +1,2 @@
-developer:
-  name: 'goodgid'
+application:
+  value: 'this value from application.yaml'

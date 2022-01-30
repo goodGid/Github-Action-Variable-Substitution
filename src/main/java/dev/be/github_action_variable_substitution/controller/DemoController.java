@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
-    @Value("${developer.name}")
-    private String name;
+    @Value("${application.value}")
+    private String value;
 
     @GetMapping("/demo")
     public String demo() {
-        return "My Name is " + name;
+        return value;
     }
 }
