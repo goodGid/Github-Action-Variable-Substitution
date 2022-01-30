@@ -9,6 +9,9 @@ JAR_NAME=$(basename $BUILD_JAR)
 
 echo "> build 파일명: $JAR_NAME" >> $DEPLOY_LOG_PATH
 
+echo "> build 파일 복사" >> $DEPLOY_LOG_PATH
+cp $BUILD_JAR $DEPLOY_PATH
+
 echo "> 현재 동작하는 어플리케이션 pid 체크" >> $DEPLOY_LOG_PATH
 CURRENT_PID=$(pgrep -f $JAR_NAME)
 
