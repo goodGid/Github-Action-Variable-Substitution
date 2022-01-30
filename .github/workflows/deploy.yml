@@ -8,7 +8,7 @@ on:
 
 env:
   S3_BUCKET_NAME: tiltil
-  RESOURCE_PATH: ./src/main/resources/application.yaml
+  RESOURCE_PATH: ./github_action_variable_substitution/src/main/resources/application.yaml
 
 jobs:
   build:
