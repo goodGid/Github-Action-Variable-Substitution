@@ -27,6 +27,8 @@ jobs:
         uses: microsoft/variable-substitution@v1
         with:
           files: ${{ env.RESOURCE_PATH }}
+        env:
+          developer.name: 'goodGid from deploy.yml'
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
