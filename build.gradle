@@ -29,6 +29,18 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+// gradle build를 하게 되면 2가지 jar 파일이 생성된다.
+//  1. github_action_variable_substitution-0.0.1-SNAPSHOT-plain.jar
+//  2. github_action_variable_substitution-0.0.1-SNAPSHOT.jar
+// 그런데 배포 스크립트(=gh_deploy.sh)를 보면 다음과 같은 수식으로 jar 파일을 찾는다.
+// --> /build/libs/*.jar
+
+// 그래서 jar 파일을 배포하려고 할 때 "-plain"이 붙은 jar가 배포될 수 있고
+// 다음가 같은 error log를 보게 된다.
+// no main manifest attribute, in /home/ubuntu/github_action/github_action_variable_substitution-0.0.1-SNAPSHOT-plain.jar
+
+// 위와 같은 상황을 방지하고자
+// "-plain"이 붙은 jar는 생성되지 않도록 아래와 같은 코드가 필요하다.
 jar {
     enabled = false
 }
