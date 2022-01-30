@@ -1,6 +1,6 @@
 #!/bin/bash
 PROJECT_NAME="github_action"
-JAR_PATH="/home/ubuntu/github_action/github-action-variable-substitution/build/libs/*.jar"
+JAR_PATH="/home/ubuntu/github_action/build/libs/*.jar"
 
 BUILD_JAR=$(ls $JAR_PATH)
 JAR_NAME=$(basename $BUILD_JAR)
