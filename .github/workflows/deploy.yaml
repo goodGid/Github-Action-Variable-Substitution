@@ -30,6 +30,9 @@ jobs:
         env:
           override.value: 'from deploy.yaml'
           from.github.secret: ${{ secrets.DI_FROM_SECRET }}
+          
+      - name: Print yaml file
+        run: cat ${{ env.RESOURCE_PATH }}
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
