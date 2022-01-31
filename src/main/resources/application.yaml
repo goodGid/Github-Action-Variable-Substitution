@@ -1,2 +1,2 @@
-application:
-  value: 'this value from application.yaml'
+override:
+  value: 'from application.yaml'
