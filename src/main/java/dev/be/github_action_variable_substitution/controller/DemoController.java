@@ -13,18 +13,8 @@ public class DemoController {
     @Value("${override.value}")
     private String overrideValue;
 
-    /*f
-    프로젝트 application.yaml에 정의되어 있지 않지만
-    Github Action에서 주입 받아 사용이 가능함을 확인하기 위한 변수
-     */
-    @Value("${from.github.secret:null}")
-    private String fromGithubSecret;
-
-    @Value("${aa.bb.cc:null}")
-    private String aabbcc;
-
     @GetMapping("/demo")
     public String demo() {
-        return overrideValue + " / " + fromGithubSecret + " / " + aabbcc;
+        return overrideValue;
     }
 }
