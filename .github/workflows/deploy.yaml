@@ -30,9 +30,6 @@ jobs:
         env:
           override.value: ${{ secrets.DI_FROM_SECRET }}
           # override.value: 'from deploy.yaml' <-- 이렇게 사용해도 주입이 된다.
-          
-      - name: Print yaml file
-        run: cat ${{ env.RESOURCE_PATH }}
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
