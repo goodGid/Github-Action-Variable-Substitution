@@ -1,2 +1,5 @@
 override:
   value: 'from application.yaml'
+from:
+  github:
+    secret: 'local'
