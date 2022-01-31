@@ -20,8 +20,11 @@ public class DemoController {
     @Value("${from.github.secret:null}")
     private String fromGithubSecret;
 
+    @Value("${aa.bb.cc:null}")
+    private String aabbcc;
+
     @GetMapping("/demo")
     public String demo() {
-        return overrideValue + " / " + fromGithubSecret;
+        return overrideValue + " / " + fromGithubSecret + " / " + aabbcc;
     }
 }
