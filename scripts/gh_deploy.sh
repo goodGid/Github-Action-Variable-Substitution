@@ -2,7 +2,8 @@
 PROJECT_NAME="github_action"
 JAR_PATH="/home/ubuntu/github_action/build/libs/*.jar"
 DEPLOY_PATH=/home/ubuntu/$PROJECT_NAME/
-DEPLOY_LOG_PATH="/home/ubuntu/$PROJECT_NAME/application.log"
+DEPLOY_LOG_PATH="/home/ubuntu/$PROJECT_NAME/deploy.log"
+APPLICATION_LOG_PATH="/home/ubuntu/$PROJECT_NAME/application.log"
 DEPLOY_ERR_LOG_PATH="/home/ubuntu/$PROJECT_NAME/deploy_err.log"
 BUILD_JAR=$(ls $JAR_PATH)
 JAR_NAME=$(basename $BUILD_JAR)
@@ -29,6 +30,6 @@ fi
 
 DEPLOY_JAR=$DEPLOY_PATH$JAR_NAME
 echo "> DEPLOY_JAR 배포" >> $DEPLOY_LOG_PATH
-nohup java -jar -Dspring.profiles.active=local $DEPLOY_JAR --server.port=8081 >> $DEPLOY_LOG_PATH 2> $DEPLOY_ERR_LOG_PATH &
+nohup java -jar -Dspring.profiles.active=local $DEPLOY_JAR --server.port=8081 >> $APPLICATION_LOG_PATH 2> $DEPLOY_ERR_LOG_PATH &
 
 echo "> 배포 종료" >> $DEPLOY_LOG_PATH
